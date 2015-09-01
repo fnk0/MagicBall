@@ -1,0 +1,52 @@
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="?colorPrimary"
+  tools:context=".MainActivity">
+
+  <TextView
+    android:gravity="center"
+    android:textSize="24sp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp"
+    android:text="Shake horizontally to get a answer"
+    android:textColor="@android:color/white"
+    android:drawableTop="@drawable/ic_vibrate_horizontal"
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  />
+
+  <ImageView
+    android:id="@+id/imageBall"
+    android:layout_centerInParent="true"
+    android:background="@drawable/magic_ball"
+    android:layout_width="330dp"
+    android:layout_height="330dp"/>
+
+  <TextView
+    android:id="@+id/answer"
+    tools:text="Concentrate and ask again"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:textColor="@android:color/white"
+    android:layout_centerInParent="true"
+    android:layout_width="140dp"
+    android:layout_height="140dp"/>
+
+  <TextView
+    android:gravity="center"
+    android:textSize="24sp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="16dp"
+    android:text="Shake vertically to clear"
+    android:textColor="@android:color/white"
+    android:drawableBottom="@drawable/ic_vibrate_vertical"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    />
+
+</RelativeLayout>
