@@ -7,7 +7,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.support.wearable.view.DismissOverlayView;
 import android.support.wearable.view.WatchViewStub;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
@@ -25,21 +28,42 @@ public class MainActivity extends Activity implements ShakeSensorCallback, Anima
     ImageView image;
     ObjectAnimator objectAnimator;
 
+    private DismissOverlayView mDismissOverlay;
+    private GestureDetector mDetector;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
+
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
                 answer = (TextView) findViewById(R.id.answer);
                 answers = getResources().getStringArray(R.array.magic_answers);
                 image = (ImageView) findViewById(R.id.imageBall);
+
+                // Obtain the DismissOverlayView element
+                mDismissOverlay = (DismissOverlayView) findViewById(R.id.dismiss_overlay);
+                mDismissOverlay.setIntroText(R.string.long_press_intro);
+                mDismissOverlay.showIntroIfNecessary();
+
+                mDetector = new GestureDetector(stub.getContext(), new GestureDetector.SimpleOnGestureListener() {
+                    public void onLongPress(MotionEvent ev) {
+                        mDismissOverlay.show();
+                    }
+                });
+
                 startAnimator();
             }
         });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return mDetector.onTouchEvent(event) || super.onTouchEvent(event);
     }
 
     void startAnimator() {
