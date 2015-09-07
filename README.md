@@ -11,9 +11,9 @@ To install Android studio please refer to the official Android docs instruction:
 
 * Start a new Android Project
 
-![image 1](https://www.dropbox.com/s/ncora1ij15hyzuo/Screenshot%202015-08-31%2017.31.10.png?dl=0)
+![image 1](https://github.com/fnk0/MagicBall/blob/master/images/first.png?raw=true)
 
 * Give it a name and a Domain (the domain is a unique identifier that is used by the PlayStore when a app is published)
     * Your domain should be: com.lastName.appName
 
-![image 2]
+![image 2](https://github.com/fnk0/MagicBall/blob/master/images/second.png?raw=true)
