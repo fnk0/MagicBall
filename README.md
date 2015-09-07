@@ -17,3 +17,15 @@ To install Android studio please refer to the official Android docs instruction:
     * Your domain should be: com.lastName.appName
 
 ![image 2](https://github.com/fnk0/MagicBall/blob/master/images/second.png?raw=true)
+
+* Here we can select the API Level of our app and the different form factors. We can keep the way it is and click next.
+
+![image 3](https://github.com/fnk0/MagicBall/blob/master/images/third.png?raw=true)
+
+* For this app we will be using the template with a blank activity. This will take generate a good amount of code for us and give the structure we need for our app.
+
+![image 4](https://github.com/fnk0/MagicBall/blob/master/images/fourth.png?raw=true)
+
+* Give it a name (MainActivity is fine)
+
+![image 5](https://github.com/fnk0/MagicBall/blob/master/images/fifth.png?raw=true)
