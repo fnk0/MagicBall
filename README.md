@@ -26,6 +26,14 @@ To install Android studio please refer to the official Android docs instruction:
 
 ![image 4](https://github.com/fnk0/MagicBall/blob/master/images/fourth.png?raw=true)
 
-* Give it a name (MainActivity is fine)
+* Give it a name and click finish! (MainActivity is fine)
 
 ![image 5](https://github.com/fnk0/MagicBall/blob/master/images/fifth.png?raw=true)
+
+
+
+### End of step 1!
+
+Good job! We are done with the setup of your first Android app!!
+
+Let's go to [Step 2](https://github.com/fnk0/MagicBall/blob/master/step2.md) and take a look on what Android Studio created for us!
