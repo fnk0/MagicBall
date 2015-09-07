@@ -3,6 +3,8 @@
   <string name="hello_world">Hello world!</string>
   <string name="action_settings">Settings</string>
   <string name="ask_me_anything">Ask me anything!</string>
+  <string name="shake_hor">Shake horizontally to get a answer</string>
+  <string name="shake_ver">Shake vertically to clear</string>
 
   <string-array name="magic_answers">
     <item>It is certain</item>

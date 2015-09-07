@@ -41,11 +41,116 @@ Ok Ok... let's start coding
 
 ## Setting up the Layout
 
-
-1. Open activity_main.xml in the res/layout folder
-
+Open activity_main.xml in the res/layout folder
 You should be seeing something similar to this
 
 ![main_layout](https://github.com/fnk0/MagicBall/blob/master/images/main_layout.png?raw=true)
+
+Let's start modifying it!
+
+Replace ```RelativeLayout``` with ```LinearLayout``` and delete the ```TextView``` placeholder
+Remove the anything that says ```android:padding="..."``` from the code and add ``` android:orientation="vertical" ```
+
+After the changes your code should look like this:
+
+```xml
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".MainActivity">
+
+</LinearLayout>
+
+```
+
+##### Understanding the code:
+
+* LinearLayout: Specifies that the layout should place the Widgets/Views in a linear fashion, one after the other
+    * ```android:orientantion="vertical"``` : We tell Android that this LinearLayout will place the views vertically
+
+
+Now we gonna click on the tab at the bottom which says "Design" and we will add our Widgets to make the screen
+
+Drag a LargeTextView a ImageView and another LargeTextView to the UI. (in this order)
+
+Them go back to the "Text" tab.
+
+Your code should now look like this:
+
+```xml
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".MainActivity">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/textView"
+    android:layout_gravity="center_horizontal"/>
+
+  <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/imageView"
+    android:layout_gravity="center_horizontal"/>
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/textView2"
+    android:layout_gravity="center_horizontal"/>
+</LinearLayout>
+
+```
+
+Let's add our image!
+
+[Click here to download the Magic Ball image](https://github.com/fnk0/MagicBall/blob/master/images/magic_ball.png?raw=true)
+
+Now copy this image inside the res/drawable folder.
+
+With the image added we can specify the image that we want our ImageView to use:
+
+We gonna specify the size of our ImageView and the image to use. We also changre the id to  be something more descriptive
+
+Make your ImageView code look like this:
+
+```xml
+
+ <ImageView
+    android:id="@+id/imageBall"
+    android:layout_width="330dp"
+    android:layout_height="330dp"
+    android:src="@drawable/magic_ball"
+  />
+
+```
+#### Adding a image to the project
+
+So far we just added a image direct to the drawable folder... but that will not work for all situations.
+Android phones and tables have lots of screen sizes and we want our assets in all of them! That's why there's a great way of generating those icons for us.
+
+[Android asset studio](https://romannurik.github.io/AndroidAssetStudio/)
+
+[Download this image](https://github.com/fnk0/MagicBall/blob/master/images/vibrate_horizontal.png?raw=true) and [this one](https://github.com/fnk0/MagicBall/blob/master/images/vibrate_vertical.png?raw=true)
+
+Click on Generic Icons
+Click on Image
+Select the image you just dow
+
+
 
 
