@@ -1,8 +1,19 @@
-# MagicBall
-Magic Ball has the answer for that doubtul question you have in mind!
+# Intro to Android by GDG OSU Stillwater
 
-Magic Ball is a simple small application developed to be used as a codelab to teach Android to beginners. 
-The sample code is relative easy to follow and the goal of the tutorial is to have a usable App for the students without the need
-of any data persistance layer or network connections. 
+###### This CodeLab has been written by Marcus Gabilheri. For any questions, concerns please email marcusandreog@gabilheri.com
 
-The tutorial link will be published here September 10th after the codelab is done by GDG OSU Stillwater.
+
+### Installing Android Studio
+
+To install Android studio please refer to the official Android docs instruction: https://developer.android.com/sdk/installing/index.html?pkg=studio
+
+## Step 1
+
+* Start a new Android Project
+
+![image 1](https://www.dropbox.com/s/ncora1ij15hyzuo/Screenshot%202015-08-31%2017.31.10.png?dl=0)
+
+* Give it a name and a Domain (the domain is a unique identifier that is used by the PlayStore when a app is published)
+    * Your domain should be: com.lastName.appName
+
+![image 2]
