@@ -184,6 +184,7 @@ Make your first TextView look like this:
     android:textColor="@android:color/white"
     android:textSize="24sp"
     />
+
 ```
 
 Repeat the same thing for the bottom TextView but this time use the vibrate vertical drawable and place the drawable on the bottom
@@ -193,15 +194,17 @@ Repeat the same thing for the bottom TextView but this time use the vibrate vert
 So... in our last step we changed our TextView and the text of the TextView is White which is the same color as our background
 Wel... we are going to change this!
 
-Inside the folder *res/values* open the file *styles.xml*
+Inside the folder **res/values** open the file **styles.xml**
 
 You should see this:
 
 ```xml
+
 <!-- Base application theme. -->
   <style name="AppTheme" parent="Theme.AppCompat.Light">
     <!-- Customize your theme here. -->
   </style>
+
 ```
 
 The first change we gonna make is where it says ```parent="Theme.AppCompat.Light" ``` you should change to ``` parent="Theme.AppCompat.Light.NoActionBar" ```
@@ -219,7 +222,7 @@ Second we are going to add our custom colors to our app. Right below it says cus
 
 That will define the primary and accent color of your app as well a darker version of the primary color to be used on the phone status bar at the top.
 
-Your final styles.xml should look like this:
+Your final styles.xml should look like this
 
 ```xml
 
