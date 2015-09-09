@@ -299,7 +299,7 @@ You can check out the full activity_mail.xml solution [here](https://github.com/
 
 If everything was right... your app should be looking somewhat like this:
 
-![screenshot 1])(https://github.com/fnk0/MagicBall/blob/master/screenshots/screenshot_1.png)
+![screenshot 1](https://github.com/fnk0/MagicBall/blob/master/screenshots/screenshot_1.png)
 
 ### Running the app!
 
