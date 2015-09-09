@@ -18,30 +18,32 @@ public class MainActivity extends AppCompatActivity implements ShakeSensorCallba
 
     SensorManager mSensorManager;
     ShakeListener mListener;
-    TextView answer;
-    Random random = new Random();
-    String[] answers;
-    ImageView image;
-    ObjectAnimator objectAnimator;
+    Random mRandom = new Random();
+    String[] mAnswers;
+    TextView mAnswerTextView;
+
+    ImageView mImageView;
+
+    ObjectAnimator mObjectAnimator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        answer = (TextView) findViewById(R.id.answer);
-        answers = getResources().getStringArray(R.array.magic_answers);
-        image = (ImageView) findViewById(R.id.imageBall);
+        mAnswerTextView = (TextView) findViewById(R.id.answer);
+        mAnswers = getResources().getStringArray(R.array.magic_answers);
+        mImageView = (ImageView) findViewById(R.id.imageBall);
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mListener = new ShakeListener(this, mSensorManager);
 
-        objectAnimator = ObjectAnimator.ofFloat(image, "rotation", 360f);
-        objectAnimator.setInterpolator(new LinearInterpolator());
-        objectAnimator.setRepeatCount(1);
-        objectAnimator.setRepeatMode(ObjectAnimator.RESTART);
-        objectAnimator.addListener(this);
-        objectAnimator.setEvaluator(new FloatEvaluator());
-        objectAnimator.setDuration(1500);
+        mObjectAnimator = ObjectAnimator.ofFloat(mImageView, "rotation", 360f);
+        mObjectAnimator.setInterpolator(new LinearInterpolator());
+        mObjectAnimator.setRepeatCount(1);
+        mObjectAnimator.setRepeatMode(ObjectAnimator.RESTART);
+        mObjectAnimator.addListener(this);
+        mObjectAnimator.setEvaluator(new FloatEvaluator());
+        mObjectAnimator.setDuration(1500);
     }
 
     @Override
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements ShakeSensorCallba
 
     @Override
     public void onAnimationEnd(Animator animation) {
-        answer.setText(answers[random.nextInt(answers.length)]);
+        mAnswerTextView.setText(mAnswers[mRandom.nextInt(mAnswers.length)]);
     }
 
     @Override
@@ -67,11 +69,11 @@ public class MainActivity extends AppCompatActivity implements ShakeSensorCallba
     @Override
     public void executeShakeAction(int shakeAction) {
         if(shakeAction == ShakeListener.SHAKE_HORIZONTAL) {
-            if(answer.getText().toString().equals("")) {
-                objectAnimator.start();
+            if(mAnswerTextView.getText().toString().equals("")) {
+                mObjectAnimator.start();
             }
         } else if(shakeAction == ShakeListener.SHAKE_VERTICAL) {
-            answer.setText("");
+            mAnswerTextView.setText("");
         }
 
     }

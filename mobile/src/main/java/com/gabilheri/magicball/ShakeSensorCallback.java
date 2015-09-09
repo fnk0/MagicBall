@@ -9,5 +9,5 @@ package com.gabilheri.magicball;
  */
 public interface ShakeSensorCallback {
 
-    void executeShakeAction(int action);
+    void executeShakeAction(@ShakeListener.ShakeEvent int action);
 }

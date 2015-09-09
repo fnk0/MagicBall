@@ -4,6 +4,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.support.annotation.IntDef;
+import android.support.annotation.NonNull;
 
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
@@ -14,6 +16,8 @@ import android.hardware.SensorManager;
  */
 public class ShakeListener implements SensorEventListener {
 
+    @IntDef({NO_SHAKE, SHAKE_HORIZONTAL, SHAKE_VERTICAL})
+    public @interface ShakeEvent {}
     public static final int NO_SHAKE = 0;
     public static final int SHAKE_HORIZONTAL = 1;
     public static final int SHAKE_VERTICAL = 2;
@@ -21,7 +25,8 @@ public class ShakeListener implements SensorEventListener {
     private static final String LOG_TAG = "ShakeListener";
     private ShakeSensorCallback mShakeSensorCallback;
 
-    public ShakeListener(ShakeSensorCallback mShakeSensorCallback, SensorManager mSensorManager) {
+    public ShakeListener(@NonNull ShakeSensorCallback mShakeSensorCallback,
+                         @NonNull SensorManager mSensorManager) {
         this.mShakeSensorCallback = mShakeSensorCallback;
         mSensorManager.registerListener(this,
                 mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
@@ -53,7 +58,7 @@ public class ShakeListener implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         updateAccelParameters(event.values[0], event.values[1], event.values[2]);
-        int shakeAction = getAccelerationChanged();
+        @ShakeEvent int shakeAction = getAccelerationChanged();
         if ((!shakeInitiated) && shakeAction > NO_SHAKE) {
             shakeInitiated = true;
         } else if ((shakeInitiated) && shakeAction > NO_SHAKE) {
@@ -87,9 +92,15 @@ public class ShakeListener implements SensorEventListener {
         zAccel = zNewAccel;
     }
 
-    /* If the values of acceleration have changed on at least two axises,
-        we are probably in a shake motion */
-    private int getAccelerationChanged() {
+    /**
+     *
+     * If the values of acceleration have changed on at least two axises,
+     * we are probably in a shake motion
+     *
+     * @return
+     *      The ShakeEvent associated with this change
+     */
+    private @ShakeEvent int getAccelerationChanged() {
         float deltaX = Math.abs(xPreviousAccel - xAccel);
         float deltaY = Math.abs(yPreviousAccel - yAccel);
         float deltaZ = Math.abs(zPreviousAccel - zAccel);
