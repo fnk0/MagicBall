@@ -239,6 +239,68 @@ Your final styles.xml should look like this
 
 ```
 
+### Finishing the UI
+
+So... we are almost done with our UI setup for this app!
+
+We need a TextView to be placed on top of the image to display the text that we gonna show to the user.
+
+But... how we place something on top of something if we are stacking things linearly? That's a great question my padawan!
+
+##### RelativeLayout to the rescue!
+
+We gonna wrap our ImageView inside a RelativeLayout. This will allow us to have a TextView on top of the ImageView
+
+What we want is to have this:
+
+```
+
+<LinearLayout>
+  <TextView />
+  <RelativeLayout />
+    <ImageView />
+    <TextView />
+  </RelativeLayout>
+  <TextView />
+</LinearLayout>
+
+```
+
+Let's do it them!!
+
+I will give you the code for the RelativeLayout and the modified version of the ImageVIew. I will leave the TextView code for your own pleasure!
+
+```xml
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- We added => android:layout_centerInParent="true" -->
+    <ImageView
+      android:id="@+id/imageBall"
+      android:layout_width="330dp"
+      android:layout_height="330dp"
+      android:layout_centerInParent="true"
+      android:src="@drawable/magic_ball"
+    />
+
+    <!-- Your TextView should go here -->
+
+  </RelativeLayout>
+
+```
+
+So... what is doing the magic here is that we are telling the ImageView to center itself on the parent which at this moment is the RelativeLayout.
+
+can you guess what you need to do with the TextView? Also the TextView should have a height and width of 140dp.
+
+You can check out the full activity_mail.xml solution [here](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/res/layout/activity_main.xml)
+
+### Running the app!
+
+Before we go to the next and final step of the app let's run the app just to make sure everything is looking good on ur phones:
+
 
 
 
