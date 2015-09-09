@@ -1,4 +1,4 @@
-## Step 2 - Understanding the Anatomy of a Android App
+## Step 2 - Understanding the Anatomy of a Android App & Creating your first Layout
 
 ##### Activity:
 
@@ -305,6 +305,14 @@ If everything was right... your app should be looking somewhat like this:
 
 Before we go to the next and final step of the app let's run the app just to make sure everything is looking good on ur phones:
 
+1. Connect your phone to the computer
+2. [Enable USB Debugging](http://www.phonearena.com/news/How-to-enable-USB-debugging-on-Android_id53909)
+3. At the menu bar you should see a green "play" button. That's the Run button. CLick on that button to run the app. This will install the app on your phone and open the app.
+
+
+### Congratulations!!
+
+Take a minute to be proud of your first Android layout! Now lets go to the [final Step](https://github.com/fnk0/MagicBall/blob/master/step3.md) and make our app actually do something.
 
 
 
