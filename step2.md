@@ -147,9 +147,30 @@ Android phones and tables have lots of screen sizes and we want our assets in al
 
 [Download this image](https://github.com/fnk0/MagicBall/blob/master/images/vibrate_horizontal.png?raw=true) and [this one](https://github.com/fnk0/MagicBall/blob/master/images/vibrate_vertical.png?raw=true)
 
-Click on Generic Icons
-Click on Image
-Select the image you just dow
+1. Click on Generic Icons
+2. Click on Image
+3. Select the one of the images you just dowloaded
+4. Remove the padding but keep the original size of 24dp
+5. Change the color and give it any name you wish
+  * Note: asset names (such as images, sounds, etc.. should only be written use lower case letters and underscore)
+  * Note2: for Icons is a good practice to place a ic_ in front of the name (i.e. ic_vibrate_vertical)
+
+6. Download the zip file with the image and unzip the folder
+7. When you open the folder you should see something like this:
+  * res/
+    * drawable-mdpi
+    * drawable-xdpi
+    .....
+
+8. Copy all the drawable folders into the res folder in your application nd if they ask you to override say yes
+9. Repeat for the other asset!
+
+
+
+
+
+
+
 
 
 
