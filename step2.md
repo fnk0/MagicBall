@@ -209,7 +209,37 @@ You should see this:
 
 The first change we gonna make is where it says ```parent="Theme.AppCompat.Light" ``` you should change to ``` parent="Theme.AppCompat.Light.NoActionBar" ```
 
-Second we are going to add our custom colors to our app. Right below it says customize your theme here and before <style> add the following:
+Second we are going to add our custom colors to our app. Right below it says customize your theme here and before ``` </style>``` add the following:
+
+```xml
+
+<item name="colorPrimary">#4DB6AC</item>
+<item name="colorPrimaryDark">#009688</item>
+<item name="colorAccent">#3F51B5</item>
+<item name="android:windowBackground">?colorPrimary</item>
+
+```
+
+That will define the primary and accent color of your app as well a darker version of the primary color to be used on the phone status bar at the top.
+
+Your final styles.xml should look like this
+
+```xml
+
+<resources>
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">#4DB6AC</item>
+    <item name="colorPrimaryDark">#009688</item>
+    <item name="colorAccent">#3F51B5</item>
+    <item name="android:windowBackground">?colorPrimary</item>
+  </style>
+</resources>
+
+```
+
+
 
 
 
