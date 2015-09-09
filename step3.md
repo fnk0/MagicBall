@@ -5,7 +5,7 @@
 So... The shake code is not very complicated (just a little bit of math) but for the sake of keeping the Codelab short I will just give it to you and tell you to copy / paste into your project.
 
 1. Create a Java class Name **ShakeListener** next to where your **MainActivity** is
-2. Copy the entire contents of [this file]() into that file
+2. Copy the entire contents of [this file](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/ShakeListener.java) into that file
 3. Create a Java interface named **ShakeSensorCallback** next to your other files
     * Put this code inside ShakeSensorCallback:
 
@@ -129,10 +129,49 @@ Inside onCreate add the following code:
 
 ```java
 
+// We get a reference to our TextView
 mAnswerTextView = (TextView) findViewById(R.id.answer);
+
+// Get the StringArray that we declared in the strings.xml
 mAnswers = getResources().getStringArray(R.array.magic_answers);
-mImageView = (ImageView) findViewById(R.id.imageBall);
+
+// Get a reference to the Sensor Manager
 mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+// Instantiate our ShakeListener
+// Note: this is the activity.
+// We can use tis because we implemented the ShakeSensorCallback in our activity
+// Otherwise that would not be possible.
 mListener = new ShakeListener(this, mSensorManager);
 
 ```
+
+###### 3. Displaying the text to the user
+
+Inside the **executeShakeAction** method we are going to add code that displays text to the user
+
+Here is what we want to do:
+
+1. If the user shakes vertically and the text is empty them we display a text to the user
+2. If the user shakes vertically and the text is not empty we don't do anything
+3. If the user shakes horizontally we clear the text
+
+You can change the Text of the mAnswerTextView with the following code:
+
+```java
+mAnswerTextView.setText("myAmazingText");
+```
+
+We can get a Random string with the following code:
+
+```java
+String randomString = mAnswers[mRandom.nextInt(mAnswers.length)];
+```
+
+Your turn! With that information try to make the text show to the user
+
+You can check out the complete solution [here](https://gist.github.com/fnk0/25fbd5f83186607b0467)
+
+### You are done!! Congratulations in writing your first app!!
+
+###### Note: If you want to make the ball spin check out my [this code](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/MainActivity.java) and see how easy is to animate something!
