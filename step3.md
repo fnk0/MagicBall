@@ -5,7 +5,7 @@
 So... The shake code is not very complicated (just a little bit of math) but for the sake of keeping the Codelab short I will just give it to you and tell you to copy / paste into your project.
 
 1. Create a Java class Name **ShakeListener** next to where your **MainActivity** is
-2. Copy the entire contents of [this file](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/ShakeListener.java) into that file
+2. Copy the entire contents of [this file](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/ShakeListener.java) into that **ShakeListener**
 3. Create a Java interface named **ShakeSensorCallback** next to your other files
     * Put this code inside ShakeSensorCallback:
 
@@ -13,7 +13,7 @@ So... The shake code is not very complicated (just a little bit of math) but for
     void executeShakeAction(@ShakeListener.ShakeEvent int action);
     ```
 
-Feel free to read the ShakeListener code later on and make sense out of it. If you can not understanding anything in that code come back in a few months and you will be surprised of how much you have changed in just a few months!
+Feel free to read the ShakeListener code later on and make sense out of it. If you do not understanding anything in that code come back in a few months and you will be surprised at how much you have learned!
 
 ### Now to the interesting part!
 
@@ -28,10 +28,10 @@ Those 2 methods are used only if we had an menu in our top Toolbar. We are not g
 
 ##### So... What is onCreate?
 
-You probably have noticed that your Activity has a **onCreate** method right? So if we compared this with regular java the onCreate would be the **main** function of that activity.
+You probably have noticed that your Activity has an **onCreate** method right? So if we compared this with regular java the onCreate would be the **main** function of that activity.
 
 When the system starts the activity the first thing called is onCreate. This is where our initialization code will happen.
-As opposite to a command line Java program where it executes and them terminates the program unless specified an Android activity will launch (execute) and wait for user input (i.e. user touch somewhere, shake, type, etc..)
+As opposite to a command line Java program where it executes and them terminates the program unless specified an Android activity will launch (execute) and wait for user input (i.e. user touching somewhere, shake, type, etc..)
 
 ##### Declaring [Instance Variables](https://en.wikipedia.org/wiki/Instance_variable)
 
@@ -106,11 +106,11 @@ Your activity declaration should look like this:
 public class MainActivity extends AppCompatActivity implements ShakeSensorCallback
 ```
 
-You should be getting a complaint from Android Studio because you are not implement the necessary methods declared from that interface.
+You should be getting a complaint from Android Studio because you are not implementing the necessary methods declared from that interface.
 
 **Trick!**
 
-If you are on a mac press CMD + N and if you are on Windows press CTRL + N
+If you are on a Mac press CMD + N and if you are on a Windows machine press CTRL + N
 
 You should have seen a Generate menu pop up. Select **Implement Methods**
 
@@ -172,6 +172,6 @@ Your turn! With that information try to make the text show to the user
 
 You can check out the complete solution [here](https://gist.github.com/fnk0/25fbd5f83186607b0467)
 
-### You are done!! Congratulations in writing your first app!!
+### You are done!! Congratulations on writing your first app!!
 
-###### Note: If you want to make the ball spin check out my [this code](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/MainActivity.java) and see how easy is to animate something!
+###### Note: If you want to make the ball spin check out [this code](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/MainActivity.java) and see how easy is to animate something!
