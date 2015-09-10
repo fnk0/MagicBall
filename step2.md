@@ -1,5 +1,7 @@
 ## Step 2 - Understanding the Anatomy of a Android App & Creating your first Layout
 
+#### First, A Few Things About Android:
+
 ##### Activity:
 
 A single screen in an Application. An Activity consists of a Java file with the code and a XML file that represents the UI.
@@ -73,7 +75,7 @@ After the changes your code should look like this:
     * ```android:orientantion="vertical"``` : We tell Android that this LinearLayout will place the views vertically
 
 
-Now we gonna click on the tab at the bottom which says "Design" and we will add our Widgets to make the screen
+Now we are going to click on the tab at the bottom which says "Design" and we will add our Widgets to make the screen
 
 Drag a LargeTextView a ImageView and another LargeTextView to the UI. (in this order)
 
@@ -124,7 +126,7 @@ Now copy this image inside the res/drawable folder.
 
 With the image added we can specify the image that we want our ImageView to use:
 
-We gonna specify the size of our ImageView and the image to use. We also changre the id to  be something more descriptive
+We are going to specify the size of our ImageView and the image to use. We also need to change the id to  be something more descriptive.
 
 Make your ImageView code look like this:
 
@@ -138,14 +140,16 @@ Make your ImageView code look like this:
   />
 
 ```
-#### Adding a image to the project
+#### Adding an image to the project
 
-So far we just added a image direct to the drawable folder... but that will not work for all situations.
-Android phones and tables have lots of screen sizes and we want our assets in all of them! That's why there's a great way of generating those icons for us.
+So far we just added an image direct to the drawable folder... but that will not work for all situations.
+Android phones and tablets have lots of screen sizes and we want our assets in all of them! That's why there's a great way of generating those icons for us.
 
 [Android asset studio](https://romannurik.github.io/AndroidAssetStudio/)
 
 [Download this image](https://github.com/fnk0/MagicBall/blob/master/images/vibrate_horizontal.png?raw=true) and [this one](https://github.com/fnk0/MagicBall/blob/master/images/vibrate_vertical.png?raw=true)
+
+#####In Android Asset Studio:
 
 1. Click on Generic Icons
 2. Click on Image
@@ -167,7 +171,7 @@ Android phones and tables have lots of screen sizes and we want our assets in al
 
 ##### Adding the image to the text
 
-Now that we have our images we are going to add them to the text so we can have some nice icons in our app.
+Now that we have our images, we are going to add them to the text so we can have some nice icons in our app.
 
 Make your first TextView look like this:
 
@@ -187,7 +191,7 @@ Make your first TextView look like this:
 
 ```
 
-Repeat the same thing for the bottom TextView but this time use the vibrate vertical drawable and place the drawable on the bottom
+Repeat the same thing for the bottom TextView but this time use the vibrate vertical drawable and place the drawable on the bottom.
 
 ##### Now my text is white? What should I do!!
 
@@ -207,9 +211,9 @@ You should see this:
 
 ```
 
-The first change we gonna make is where it says ```parent="Theme.AppCompat.Light" ``` you should change to ``` parent="Theme.AppCompat.Light.NoActionBar" ```
+The first change we are going to make is where it says ```parent="Theme.AppCompat.Light" ``` you should change to ``` parent="Theme.AppCompat.Light.NoActionBar" ```
 
-Second we are going to add our custom colors to our app. Right below it says customize your theme here and before ``` </style>``` add the following:
+Second we are going to add our custom colors to our app. Right below where it says customize your theme here and before ``` </style>``` add the following:
 
 ```xml
 
@@ -245,11 +249,11 @@ So... we are almost done with our UI setup for this app!
 
 We need a TextView to be placed on top of the image to display the text that we gonna show to the user.
 
-But... how we place something on top of something if we are stacking things linearly? That's a great question my padawan!
+But... how we place something on top of something if we are stacking things linearly? That's a great question, young padawan!
 
 ##### RelativeLayout to the rescue!
 
-We gonna wrap our ImageView inside a RelativeLayout. This will allow us to have a TextView on top of the ImageView
+We are going to wrap our ImageView inside a RelativeLayout. This will allow us to have a TextView on top of the ImageView
 
 What we want is to have this:
 
@@ -268,7 +272,7 @@ What we want is to have this:
 
 Let's do it them!!
 
-I will give you the code for the RelativeLayout and the modified version of the ImageVIew. I will leave the TextView code for your own pleasure!
+I will give you the code for the RelativeLayout and the modified version of the ImageView. I will leave the TextView code for your own pleasure!
 
 ```xml
 
@@ -293,7 +297,7 @@ I will give you the code for the RelativeLayout and the modified version of the 
 
 So... what is doing the magic here is that we are telling the ImageView to center itself on the parent which at this moment is the RelativeLayout.
 
-can you guess what you need to do with the TextView? Also the TextView should have a height and width of 140dp.
+Can you guess what you need to do with the TextView? Also the TextView should have a height and width of 140dp.
 
 You can check out the full activity_mail.xml solution [here](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/res/layout/activity_main.xml)
 
@@ -303,7 +307,7 @@ If everything was right... your app should be looking somewhat like this:
 
 ### Running the app!
 
-Before we go to the next and final step of the app let's run the app just to make sure everything is looking good on ur phones:
+Before we go to the next and final step of the app let's run the app just to make sure everything is looking good on your phones:
 
 1. Connect your phone to the computer
 2. [Enable USB Debugging](http://www.phonearena.com/news/How-to-enable-USB-debugging-on-Android_id53909)
