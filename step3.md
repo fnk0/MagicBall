@@ -175,3 +175,9 @@ You can check out the complete solution [here](https://gist.github.com/fnk0/25fb
 ### You are done!! Congratulations on writing your first app!!
 
 ###### Note: If you want to make the ball spin check out [this code](https://github.com/fnk0/MagicBall/blob/master/mobile/src/main/java/com/gabilheri/magicball/MainActivity.java) and see how easy is to animate something!
+
+### Where to go from here?
+
+###### [Check out google's free Android for Beginners course on Udacity](https://www.udacity.com/course/android-development-for-beginners--ud837)
+
+It's free to watch the videos! You only have to pay if you want to get a certificate
